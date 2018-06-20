@@ -1,0 +1,76 @@
+#%RAML 1.0
+baseUri: https://mocksvc.mulesoft.com/mocks/d732e2ba-78cb-4c45-b7aa-fa2d994f41e3 # 
+title: Muletrainingapi.raml
+version: 1.0
+mediaType: application/json
+description: 
+  This is list of Mulesoft trainers.
+/trainers:
+  get:
+   responses: 
+     200:
+       body: 
+         application/json:
+           example:
+            [{ 
+              "Trainer ID": "123",
+              "Trainer Name": "Venkata Siva",
+              "Phone": "100" 
+            },
+            {
+              "Trainer ID": "456",
+              "Trainer Name": "Tarun",
+              "Phone": "101" 
+            }]
+
+  post:
+    body: 
+      application/json:
+         example:
+          { 
+            "Trainer ID": "123",
+            "Trainer Name": "Venkata Siva",
+            "Phone": "100"
+          }
+    responses: 
+      200:
+        body: 
+          application/json:
+           example:
+             [ The Message is updated successfully in database ]
+
+  /getbyid:
+    get:
+      queryParameters: 
+       id: 
+         displayName: ID
+         description: trainer id
+         required: true
+         type: integer
+      responses: 
+        200:
+          body: 
+            example:
+             { 
+              "Trainer ID": "123",
+              "Trainer Name": "Venkata Siva",
+              "Phone": "100"
+            }
+            
+
+
+        
+    
+           
+            
+     
+
+
+           
+
+
+         
+        
+      
+        
+               
